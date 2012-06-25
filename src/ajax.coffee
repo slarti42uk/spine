@@ -147,7 +147,7 @@ class Singleton extends Base
           # ID change, need to do some shifting
           if data.id and @record.id isnt data.id
             @record.changeID(data.id)
-
+            @record.trigger('changedId', data.id)
           # Update with latest data
           @record.updateAttributes(data.attributes())
 
